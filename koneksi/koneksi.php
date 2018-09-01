@@ -1,0 +1,9 @@
+<?php
+error_reporting(0);
+$user_db="root";
+$pass_db="";
+$server_db="localhost";
+$nama_db="inventory";
+$koneksi=mysql_connect($server_db,$user_db,$pass_db);
+$pilih_db=mysql_select_db($nama_db);
+?>
