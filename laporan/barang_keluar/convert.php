@@ -16,17 +16,19 @@ $num_rows=mysql_num_rows($sql);
 </head>
 <body>
 <div id="logo">
-<img src="" width="491" height="120"></div>
+<img src="../../mycss/images/BNE.png" align="center" width="491" height="120"></div>
+<br>
 <div id="title">
  LAPORAN BARANG KELUAR TANGGAL <?php echo "$tgl_awal S/D $tgl_akhir"; ?>
 </div>
+<br>
 <div id="isi">
   <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
   <tr class="tr-title">
   	<td>NO</td>
     <td>ID TRANSAKSI</td>
     <td width="50">TANGGAL KELUAR</td>
-    <td width="50">ID DEPARTEMEN</td>
+    <td>DEPARTEMEN</td>
     <td>ID BARANG</td>
 	<td>STOK AWAL</td>
 	<td width="50">JUMLAH KELUAR</td>
@@ -43,22 +45,24 @@ $num_rows=mysql_num_rows($sql);
 	$id_barang=$rows['id_barang'];
 	$stok_awal=$rows['stok_awal'];
 	$jml_keluar=$rows['jml_keluar'];
-	$hrg_beli=format_rupiah($rows['hrg_beli']);
-	$sub_total=format_rupiah($rows['sub_total']);
+	$id_user=$rows['id_user'];
+	// $hrg_beli=format_rupiah($rows['hrg_beli']);
+	// $sub_total=format_rupiah($rows['sub_total']);
 	$total_barang=$jml_keluar+$total_barang;
-	$total_harga=($rows['sub_total'])+$total_harga;
+	// $total_harga=($rows['sub_total'])+$total_harga;
 	echo"	<tr>
 			<td>$i</td>
 			<td>$id_keluar</td>
 			<td>$tgl_keluar</td>
 			<td>$outlet</td>
 			<td>$id_barang</td>
+			<td>$id_user</td>
 			<td>$stok_awal</td>
 			<td>$jml_keluar</td>
 			</tr>";
 	}
 	echo "<tr>
-    <td colspan='6' align='right'>TOTAL</td>
+    <td colspan='7' align='right'>TOTAL</td>
     <td>$total_barang</td>
 
   </tr>";

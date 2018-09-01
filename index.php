@@ -1,5 +1,8 @@
 <?php 
 session_start();
+include('koneksi/koneksi.php');
+$data = mysql_query("SELECT * FROM barang where stok < 10");
+
 if(empty($_SESSION['id_user'])&&empty($_SESSION['level'])){
 header("location:login.php");
 }
@@ -11,6 +14,7 @@ else{
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sistem Stok</title>
 <link rel="stylesheet" type="text/css" href="mycss/index.css">
+<link rel="stylesheet" type="text/css" href="mycss/w3.css">
 <link rel="stylesheet" type="text/css" href="jquery_easyui/themes/default/easyui.css">
 <link rel="stylesheet" type="text/css" href="jquery_easyui/themes/icon.css">
 <link rel="stylesheet" type="text/css" href="jquery_easyui/themes/panel.css" />
@@ -32,7 +36,21 @@ function addTab(title, url){
 	</script>
 </head>
 
-<body>
+<body onLoad="document.getElementById('id01').style.display='block'">
+	<div id="id01" class="w3-modal">
+	    <div class="w3-modal-content">
+	      <header class="w3-container w3-teal"> 
+	        <span onclick="document.getElementById('id01').style.display='none'" 
+	        class="w3-button w3-display-topright">&times;</span>
+	        <h2>Stok Limit !</h2>
+	      </header>
+	      <div class="w3-container">
+	      	<?php while($value=mysql_fetch_array($data)){ ?>
+	        	<p><?php echo $value['id_barang'] .'-'. $value['nm_barang'] .' ('. $value['stok']. ')' ?></p>
+	        <?php } ?>
+	      </div>
+	    </div>
+	</div>
 <div id="header">
 </div>
 <div id="navigasi">
@@ -131,3 +149,5 @@ Copyright &copy; - Warehouse Dept - <?php echo date("Y"); ?> - <a href="" target
 </body>
 </html>
 <?php } ?>
+
+

@@ -16,7 +16,7 @@ $num_rows=mysql_num_rows($sql);
 </head>
 <body>
 <div id="logo">
-<img src="" width="132" height="120"></div>
+<img src="../../mycss/images/BNE.png" align="center" width="491" height="120"></div>
 <div id="title">
   <p>LAPORAN BARANG MASUK (INCOMING MATERIAL) TANGGAL <?php echo "$tgl_awal S/D $tgl_akhir"; ?>
     </p>
@@ -25,12 +25,11 @@ $num_rows=mysql_num_rows($sql);
   <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
   <tr class="tr-title">
   	<td>NO</td>
-    <td>ID TRANSAKSI</td>
-    <td>TANGGAL</td>
-    <td>SUPPLIER</td>
-    <td>ID BARANG</td>
-	<td>STOK AWAL</td>
-
+    <td width="150" align="center">ID TRANSAKSI</td>
+    <td width="80" align="center">TANGGAL</td>
+    <td align="center">SUPPLIER</td>
+    <td align="center">ID BARANG</td>
+	<td align="center">STOK AWAL</td>
     <td width="50">JUMLAH MASUK</td>
 
   </tr>
@@ -51,17 +50,17 @@ $num_rows=mysql_num_rows($sql);
 	$total_harga=($rows['sub_total'])+$total_harga;
 	echo"	<tr>
 			<td>$i</td>
-			<td>$id_masuk</td>
-			<td>$tgl_masuk</td>
-			<td>$supplier</td>
-			<td>$id_barang</td>
-			<td>$stok_awal</td>		
-			<td>$jml_masuk</td>	
+			<td align=\"center\">$id_masuk</td>
+			<td align=\"center\">$tgl_masuk</td>
+			<td align=\"center\">$supplier</td>
+			<td align=\"center\">$id_barang</td>
+			<td align=\"center\">$stok_awal</td>		
+			<td align=\"center\">$jml_masuk</td>	
 		</tr>";
 	}
 	echo "<tr>
     <td colspan='6' align='right'>TOTAL</td>
-    <td>$total_barang</td>
+    <td align=\"center\">$total_barang</td>
 
   </tr>";
  ?>

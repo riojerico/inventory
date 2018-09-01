@@ -3,8 +3,7 @@ session_start();
 ob_start();
 include('../../koneksi/koneksi.php');
 include('../../koneksi/fungsi_rupiah.php');
-$sql = mysql_query("SELECT * FROM barang, jenis_barang 
-WHERE barang.id_jenis = jenis_barang.id_jenis ORDER BY barang.id_barang ASC");
+$sql = mysql_query("SELECT * FROM barang, jenis_barang WHERE barang.id_jenis = jenis_barang.id_jenis ORDER BY barang.id_barang ASC");
 $num_rows=mysql_num_rows($sql);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml"> <!-- Bagian halaman HTML yang akan konvert -->
@@ -24,12 +23,10 @@ $num_rows=mysql_num_rows($sql);
   <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
   <tr class="tr-title">
   	<td>NO</td>
-    <td>ID BARANG</td>
-    <td>NAMA BARANG</td>
-    <td>ID SUPPLIER</td>
-    <td>NAMA SUPPLIER</td>
-    <td>JENIS</td>
-    <td>STOK</td>
+    <td width="100" align="center">ID BARANG</td>
+    <td width="200" align="center">NAMA BARANG</td>
+    <td width="150" align="center">JENIS</td>
+    <td width="150" align="center">STOK</td>  
   </tr>
 <?php
 	$total_stok=0;
@@ -38,23 +35,25 @@ $num_rows=mysql_num_rows($sql);
 	$id_barang=$rows['id_barang'];
 	$nm_barang=$rows['nm_barang'];
 	$nm_jenis=$rows['nm_jenis'];
-	$hrg_beli=format_rupiah($rows['hrg_beli']);
-	$hrg_jual=format_rupiah($rows['hrg_jual']);
+	#dam#
+	$id_suplier=$rows['nm_jenis'];
+	$nm_suplier=$rows['nm_jenis'];
+	// $hrg_beli=format_rupiah($rows['hrg_beli']);
+	// $hrg_jual=format_rupiah($rows['hrg_jual']);
+	#dam#
 	$stok=$rows['stok'];
 	$satuan=$rows['satuan'];
 	$total_stok=$stok+$total_stok;
    	echo "  <tr>
-			<td>$i</td>
-			<td>$id_barang</td>
-			<td>$nm_barang</td>
-			<td>$nm_jenis</td>
-			<td>Rp. $hrg_beli</td>
-			<td>Rp. $hrg_jual</td>
-			<td>$stok $satuan</td>
-		</tr>";
+				<td>$i</td>
+				<td>$id_barang</td>
+				<td>$nm_barang</td>
+				<td>$nm_jenis</td>
+				<td>$stok $satuan</td>
+			</tr>";
 	}
 	echo "<tr>
-    <td colspan='6' align='right'>TOTAL</td>
+    <td colspan='4' align='right'>TOTAL</td>
     <td>$total_stok</td>
   </tr>";
  ?>

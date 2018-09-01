@@ -1,6 +1,3 @@
-<?php
-error_reporting(0);
- ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -40,12 +37,12 @@ error_reporting(0);
 		<div class="tip icon-tip">&nbsp;</div>
 		<div>Pilih periode tanggal laporan melalui datebox.</div>
 </div>
-
+    
 <div style="margin:10px 0;">
 <form action="pilih_lap.php" id="fmFilter" method="post" novalidate>
-Tanggal Awal:
+Tanggal Awal: 
 <input name="tgl_awal" class="easyui-datebox" id="tgl_awal" data-options="formatter:myformatter,parser:myparser" />
-Tanggal Akhir:
+Tanggal Akhir: 
 <input name="tgl_akhir" class="easyui-datebox" id="tgl_akhir" data-options="formatter:myformatter,parser:myparser" />
 <input type="submit"  name="button" id="button" value="OK" />
 </form>
@@ -65,9 +62,9 @@ Tanggal Akhir:
 
 			</tr>
 		</thead>
-  </table>
-  </div>
-<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-pdf" plain="true"
+  </table> 
+  </div> 
+<a href="javascript:void(0);" class="easyui-linkbutton" iconCls="icon-pdf" plain="true" 
 onclick="window.open('convert.php?tgl_awal=<?php echo $_POST['tgl_awal']; ?>
 &tgl_akhir=<?php echo $_POST['tgl_akhir']; ?>
 ','Laporan Barang Masuk','size=800,height=800,scrollbars=yes,resizeable=no')">PDF</a>

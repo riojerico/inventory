@@ -1,7 +1,4 @@
-<?php
-error_reporting(0);
- ?>
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -40,12 +37,12 @@ error_reporting(0);
 		<div class="tip icon-tip">&nbsp;</div>
 		<div>Pilih periode tanggal laporan melalui datebox.</div>
 </div>
-
+    
 <div style="margin:10px 0;"></div>
 <form action="pilih_lap.php" id="fmFilter" method="post" novalidate>
-Tanggal Awal:
-<input name="tgl_awal" class="easyui-datebox" id="tgl_awal" data-options="formatter:myformatter,parser:myparser">
-Tanggal Akhir:
+Tanggal Awal: 
+<input name="tgl_awal" class="easyui-datebox" id="tgl_awal" data-options="formatter:myformatter,parser:myparser"> 
+Tanggal Akhir: 
 </input>
     <input name="tgl_akhir" class="easyui-datebox" id="tgl_akhir" data-options="formatter:myformatter,parser:myparser"></input>
   <input type="submit"  name="button" id="button" value="OK" />
@@ -63,7 +60,7 @@ Tanggal Akhir:
               <th field="id_outlet" width="50">DEPARTEMEN</th>
               <th field="id_barang" width="50">ID BARANG</th>
               <th field="jml_keluar" width="50">JML KELUAR</th>
-
+             
 			</tr>
 		</thead>
   </table>
